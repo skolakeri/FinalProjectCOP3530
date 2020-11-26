@@ -2,7 +2,9 @@ import static com.sun.tools.javac.jvm.ByteCodes.swap;
 
 public class SortingAlgorithms {
 
+
     public void selectionSort(int arr[], int size) {
+        long startTime = System.nanoTime();
         for (int i = 0; i < size - 1; i++) {
             int min_index = i;
             for (int j = i + 1; j < size; j++) {
@@ -13,10 +15,13 @@ public class SortingAlgorithms {
             arr[min_index] = arr[i];
             arr[i] = temp;
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
     }
 
 
     public void bubbleSort(int arr[], int size) {
+        long startTime = System.nanoTime();
         for (int i = 0; i < size - 1; i++) {
             int swapped = 0;
             for (int j = 0; j < size - i - 1; j++) {
@@ -31,9 +36,12 @@ public class SortingAlgorithms {
                 break;
             }
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
     }
 
     public void insertionSort(int arr[], int size) {
+        long startTime = System.nanoTime();
         for (int i = 1; i < size; i++) {
             int key = arr[i];
             int j = i - 1;
@@ -43,9 +51,12 @@ public class SortingAlgorithms {
             }
             arr[j + 1] = key;
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
     }
 
     void mergeSort(int arr[], int l, int m, int r) {
+        long startTime = System.nanoTime();
         int n1 = m - l + 1;
         int n2 = r - m;
 
@@ -83,14 +94,19 @@ public class SortingAlgorithms {
             j++;
             k++;
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
     }
 
     void quickSort(int array[], int low, int high) {
+        long startTime = System.nanoTime();
         if (low < high) {
             int pivot = partition(array, low, high);
             quickSort(array, low, pivot - 1);
             quickSort(array, pivot + 1, high);
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
     }
 
     int partition(int[] arr, int low, int high) {
@@ -113,6 +129,7 @@ public class SortingAlgorithms {
     }
 
     int shellSort(int arr[]){
+        long startTime = System.nanoTime();
         int n = arr.length;
         for(int gap = n/2; gap > 0; gap/=2){
             for(int i = gap; i < n; i++){
@@ -124,7 +141,10 @@ public class SortingAlgorithms {
                 arr[j] = temp;
             }
         }
+        long stopTime = System.nanoTime();
+        System.out.println(stopTime - startTime);
         return 0;
     }
+
 
 }
