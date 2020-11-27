@@ -10,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Hashtable.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1600,650));
+        Parent root = FXMLLoader.load(getClass().getResource("BinaryTree.fxml"));
+        primaryStage.setTitle("Binary Tree");
+        primaryStage.setScene(new Scene(root, 1650, 650));
         primaryStage.show();
     }
 

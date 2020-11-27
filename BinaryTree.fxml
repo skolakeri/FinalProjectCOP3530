@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerBinaryTree">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="StartPlaceholderBT" fill="#ecff1f" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex1" fill="#e3ff1f" layoutX="750.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex2" fill="#f8f81d" layoutX="550.0" layoutY="200.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex3" fill="#f6ff1f" layoutX="950.0" layoutY="200.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex4" fill="#f6ff1f" layoutX="400.0" layoutY="325.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex5" fill="#e8ff1f" layoutX="700.0" layoutY="325.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex6" fill="#f1ff1f" layoutX="1100.0" layoutY="325.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Circle fx:id="CircleIndex7" fill="#deff1f" layoutX="600.0" layoutY="450.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+            <Line fx:id="Line1_2" endX="50.0" layoutX="653.0" layoutY="150.0" rotate="-26.6" startX="-50.0" visible="false" />
+            <Line fx:id="Line1_3" endX="50.0" layoutX="851.0" layoutY="150.0" rotate="26.6" startX="-50.0" visible="false" />
+            <Line fx:id="Line2_4" endX="40.0" layoutX="476.0" layoutY="261.0" rotate="-35.5" startX="-40.0" visible="false" />
+            <Line fx:id="Line2_5" endX="40.0" layoutX="627.0" layoutY="261.0" rotate="39.5" startX="-40.0" visible="false" />
+            <Line fx:id="Line5_7" endX="25.0" layoutX="647.0" layoutY="386.0" rotate="-49.4" startX="-25.0" visible="false" />
+            <Line fx:id="Line3_6" endX="40.0" layoutX="1025.0" layoutY="262.0" rotate="-140.8" startX="-40.0" visible="false" />
+            <Label fx:id="LabelRootBT" layoutX="150.0" layoutY="175.0" text="17 is the Root" visible="false" />
+            <Label fx:id="Comparison1BT" layoutX="150.0" layoutY="200.0" text="4 &lt; 17" visible="false" />
+            <Label fx:id="Comparison2BT" layoutX="150.0" layoutY="225.0" text="21 &gt; 17" visible="false" />
+            <Label fx:id="Comparison3aBT" layoutX="150.0" layoutY="250.0" text="11 &lt; 17" visible="false" />
+            <Label fx:id="Comparison3bBT" layoutX="150.0" layoutY="275.0" text="11 &gt; 4" visible="false" />
+            <Label fx:id="Comparison4aBT" layoutX="150.0" layoutY="300.0" text="25 &gt; 17" visible="false" />
+            <Label fx:id="Comparison4bBT" layoutX="150.0" layoutY="325.0" text="25 &gt; 21" visible="false" />
+            <Label fx:id="Comparison5aBT" layoutX="150.0" layoutY="350.0" text="2 &lt; 17" visible="false" />
+            <Label fx:id="Comparison5bBT" layoutX="150.0" layoutY="375.0" text="2 &lt; 4" visible="false" />
+            <Label fx:id="Comparison6aBT" layoutX="150.0" layoutY="400.0" text="7 &lt; 17" visible="false" />
+            <Label fx:id="Comparison6bBT" layoutX="150.0" layoutY="425.0" text="7 &gt; 4" visible="false" />
+            <Label fx:id="Comparison6cBT" layoutX="150.0" layoutY="450.0" text="7 &lt; 11" visible="false" />
+            <Circle fx:id="Circle7" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle6" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle5" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle4" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle3" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle2" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Circle1" fill="DODGERBLUE" layoutX="200.0" layoutY="100.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line fx:id="LineFAKE" endX="50.0" layoutX="658.0" layoutY="150.0" rotate="-21.8" startX="-50.0" visible="false" />
+            <Label fx:id="LabelSearch7" layoutX="333.0" layoutY="90.0" text="Searching for Value 7..." visible="false" />
+            <Label fx:id="LabelDelete11" layoutX="333.0" layoutY="120.0" text="Deleting Value 11" visible="false" />
+            <Label fx:id="LabelMove7" layoutX="333.0" layoutY="150.0" text="Moving Value 7" visible="false" />
+            <Circle fx:id="DeleteCircle" fill="#24374a" layoutX="201.0" layoutY="101.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+         </children></Pane>
+   </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="InsertButtonBT" mnemonicParsing="false" onAction="#InsertBT" text="Insert" />
+            <Button fx:id="DeleteButtonBT" mnemonicParsing="false" onAction="#DeleteBT" text="Delete" />
+            <Button fx:id="SearchButtonBT" mnemonicParsing="false" onAction="#SearchBT" text="Search" />
+        </items>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ToolBar>
+   </top>
+</BorderPane>
