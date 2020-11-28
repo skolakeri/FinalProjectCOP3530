@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.InputNumber">
+   <children>
+      <TextField fx:id="userNumberInput" layoutX="226.0" layoutY="188.0" onAction="#changeToSelectionSortWithInput" promptText="Number" />
+      <Label layoutX="193.0" layoutY="160.0" text="Enter the number of values to be sorted:" />
+      <Button layoutX="414.0" layoutY="350.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="nextButton" layoutX="486.0" layoutY="350.0" mnemonicParsing="false" onAction="#changeToSelectionSort" text="Next" />
+      <HBox layoutX="2.0" layoutY="213.0" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Region prefHeight="100.0" prefWidth="173.0" />
+            <Button fx:id="SelectionSortButton" mnemonicParsing="false" onAction="#selectionSortButtonClicked" text="Selection Sort" />
+            <Button fx:id="InsertionSort" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#insertionButtonClicked" text="Insertion Sort" />
+            <Button fx:id="BubbleSortButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#bubbleSortClicked" text="Bubble Sort" />
+            <Region layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="139.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="193.0" layoutY="286.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="intButton" mnemonicParsing="false" onAction="#intButtonClicked" text="int" />
+            <Button fx:id="DoubleButton" mnemonicParsing="false" onAction="#doubleButtonClicked" text="double" />
+            <Button fx:id="floatButton" mnemonicParsing="false" onAction="#floatButtonClicked" text="float" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
