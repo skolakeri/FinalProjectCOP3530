@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <Label contentDisplay="CENTER" text="Data Structures and Algorithms Visualizer" textAlignment="CENTER" textFill="#390633" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="22.0" />
+      </font>
+   </Label>
+   <Label text="Select a Sorting Algorithm or Data Structure " translateY="290.0">
+      <font>
+         <Font name="Monaco" size="15.0" />
+      </font>
+   </Label>
+    <Button fx:id="selectionSort" alignment="CENTER" contentDisplay="CENTER" onAction="#handleSelectionClick" text="Selection Sort" textFill="#ff0202" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="20.0" />
+      </font></Button>
+    <Button fx:id="insertionSort" onAction="#handleInsertionClick" text="Insertion Sort" textFill="#eb5d05" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="20.0" />
+      </font></Button>
+    <Button fx:id="bubbleSort" onAction="#handleBubbleClick" text="Bubble Sort" textFill="#0ba41d" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="20.0" />
+      </font></Button>
+    <Button fx:id="tables" alignment="CENTER" onAction="#handleTablesClick" text="Tables" textFill="#1e22fc" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="20.0" />
+      </font></Button>
+    <Button fx:id="trees" alignment="CENTER" onAction="#handleTreesClick" text="Trees" textFill="#bc0fda" translateY="40.0">
+      <font>
+         <Font name="Monaco" size="20.0" />
+      </font></Button>
+
+</VBox>
