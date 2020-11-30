@@ -12,7 +12,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER" prefHeight="81.0" prefWidth="600.0" text="Data Structures And Algorithms Visualizer">
+      <Label id="title" alignment="CENTER" prefHeight="81.0" prefWidth="600.0" text="Data Structures And Algorithms Visualizer">
          <font>
             <Font name="Marker Felt Thin" size="36.0" />
          </font>
@@ -25,15 +25,15 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+      <SplitPane id="horizontalSplit" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="598.0">
+          <AnchorPane id="topHalf" minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="598.0">
                <children>
-                  <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="598.0" text="Data Type" textFill="#1630dd">
+                  <MenuButton id="dataType" alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="598.0" text="Data Type" textFill="#1630dd">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Double" />
-                        <MenuItem mnemonicParsing="false" text="Float" />
-                      <MenuItem mnemonicParsing="false" text="Integer" />
+                      <MenuItem id="doubleData" mnemonicParsing="false" text="Double" />
+                        <MenuItem id="floatData" mnemonicParsing="false" text="Float" />
+                      <MenuItem id="integerData" mnemonicParsing="false" text="Integer" />
                     </items>
                      <font>
                         <Font name="Marker Felt Thin" size="30.0" />
@@ -41,19 +41,19 @@
                   </MenuButton>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane id="bottomHalf" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="598.0">
+                  <SplitPane id="verticalSplit" dividerPositions="0.5" prefHeight="160.0" prefWidth="598.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <AnchorPane id="leftHalf" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="294.0" text="Computation" textAlignment="CENTER" textFill="#db9916">
+                              <MenuButton id="comp" alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="294.0" text="Computation" textAlignment="CENTER" textFill="#db9916">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="Selection Sort" />
-                                  <MenuItem mnemonicParsing="false" text="Insertion Sort" />
-                                    <MenuItem mnemonicParsing="false" text="Bubble Sort" />
-                                    <MenuItem mnemonicParsing="false" text="Table" />
-                                    <MenuItem mnemonicParsing="false" text="Tree" />
+                                  <MenuItem id="selComp" mnemonicParsing="false" text="Selection Sort" />
+                                  <MenuItem id="insComp" mnemonicParsing="false" text="Insertion Sort" />
+                                    <MenuItem id="bubComp" mnemonicParsing="false" text="Bubble Sort" />
+                                    <MenuItem id="tabComp" mnemonicParsing="false" text="Table" />
+                                    <MenuItem id="treeComp" mnemonicParsing="false" text="Tree" />
                                 </items>
                                  <font>
                                     <Font name="Marker Felt Thin" size="30.0" />
@@ -61,15 +61,15 @@
                               </MenuButton>
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <AnchorPane id="rightHalf" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="294.0" text="Animation" textFill="#db9916">
+                              <MenuButton id="anim" alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="294.0" text="Animation" textFill="#db9916">
                                  <items>
-                                    <MenuItem mnemonicParsing="false" text="Selection Sort" />
-                                    <MenuItem mnemonicParsing="false" text="Insertion Sort" />
-                                    <MenuItem mnemonicParsing="false" text="Bubble Sort" />
-                                    <MenuItem mnemonicParsing="false" text="Table" />
-                                    <MenuItem mnemonicParsing="false" text="Tree" />
+                                    <MenuItem id="selAnim" mnemonicParsing="false" text="Selection Sort" />
+                                    <MenuItem id="insAnim" mnemonicParsing="false" text="Insertion Sort" />
+                                    <MenuItem id="bubAnim" mnemonicParsing="false" text="Bubble Sort" />
+                                    <MenuItem id="tabAnim" mnemonicParsing="false" text="Table" />
+                                    <MenuItem id="treeAnim" mnemonicParsing="false" text="Tree" />
                                  </items>
                                  <font>
                                     <Font name="Marker Felt Thin" size="30.0" />
@@ -83,7 +83,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Label alignment="CENTER" prefHeight="120.0" prefWidth="601.0" text="Select Data Type --&gt; Select Sorting Algorithm or Data Structure">
+      <Label id="instructions" alignment="CENTER" prefHeight="120.0" prefWidth="601.0" text="Select Data Type --&gt; Select Sorting Algorithm or Data Structure">
          <font>
             <Font name="Marker Felt Thin" size="22.0" />
          </font>
