@@ -47,9 +47,9 @@ public class ExecutionWindowController {
     public TextArea unsortedArrayElements;
     public TextArea sortedArrayElements;
     public Text TimeExectionTextBox;
-    public Button ShowSubScene;
     public BorderPane SubSceneBorderPane;
     public javafx.scene.SubScene SubScene;
+    public Button backButton;
 
     /*
         This method will be invoked when the back button is clicked. It loads the inputNumber FXML file
