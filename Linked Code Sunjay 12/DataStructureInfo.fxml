@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DataStructureInfo">
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Animation:">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <BorderPane fx:id="SubSceneBorderPane" prefHeight="200.0" prefWidth="200.0" />
+                <Text fx:id="numberSorted" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="250.0" translateY="50.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Text>
+                <Label text="Elements Sorted:" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <Label text="Time Complexity:">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label text="Time Elapsed for Execution:" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <SubScene fx:id="SubScene" height="200.0" width="200.0">
+                    <root>
+                        <Region />
+                    </root>
+                </SubScene>
+            </children>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#backToInputNumber" text="Back" translateX="450.0" translateY="5.0" />
+                <Button fx:id="ShowSubScene" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAnimation" text="Show SubScene" translateX="450.0" translateY="5.0">
+                    <HBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" />
+                    </HBox.margin>
+                </Button>
+                <Text fx:id="TimeExectionTextBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="145.0" />
+            </children>
+        </HBox>
+    </bottom>
+    <top>
+        <Text fx:id="nameOfAlgorithmn" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sort" translateX="200.0" wrappingWidth="170.13671875" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Text>
+    </top>
+    <right>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="elementsInDataStructure" prefHeight="200.0" prefWidth="200.0" />
+            </children>
+        </HBox>
+    </right>
+</BorderPane>
