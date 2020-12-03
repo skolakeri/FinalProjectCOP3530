@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExecutionWindowController">
+    <left>
+        <VBox prefHeight="89.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="0.0" prefWidth="154.0" text="Elements Sorted:" textFill="#f57b2a">
+                    <font>
+                        <Font name="Marker Felt Thin" size="22.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="31.0" prefWidth="156.0" text="Time Complexity:" textFill="#da9d53">
+                    <font>
+                        <Font name="Marker Felt Thin" size="22.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="31.0" prefWidth="246.0" text="Time Elapsed for Execution:" textFill="#f5b54d" wrapText="true">
+                    <font>
+                        <Font name="Marker Felt Thin" size="22.0" />
+                    </font>
+                </Label>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="388.0" text="Unsorted                               Sorted">
+               <font>
+                  <Font name="Marker Felt Thin" size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox prefHeight="145.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="unsortedArrayElements" prefHeight="164.0" prefWidth="187.0" />
+              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <children>
+                      <TextArea fx:id="sortedArrayElements" prefHeight="200.0" prefWidth="200.0" />
+                  </children>
+              </HBox>
+                <Text fx:id="TimeExectionTextBox" fill="#0567e8" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" translateX="145.0">
+               <font>
+                  <Font name="Marker Felt Thin" size="22.0" />
+               </font></Text>
+                <Text fx:id="numberSorted" fill="#000dc3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="40.079999923706055">
+                    <font>
+                        <Font name="Marker Felt Thin" size="22.0" />
+                    </font></Text>
+            </children>
+        </HBox>
+    </bottom>
+   <top>
+        <Text fx:id="nameOfAlgorithmn" fill="#0041e4" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sort" textAlignment="CENTER" wrappingWidth="281.13671875" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Marker Felt Thin" size="41.0" />
+            </font>
+        </Text>
+   </top>
+</BorderPane>
