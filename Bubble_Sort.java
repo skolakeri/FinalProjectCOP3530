@@ -1,3 +1,5 @@
+package sample.selectionSort;
+
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -6,10 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.util.Hashtable;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -69,6 +74,18 @@ public class Bubble_Sort extends Application {
             arrRecs[i] = r;
             xLocations[i] = xPos + (r.getWidth() / 2.0);
         }
+
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE);
+
+        Label desc = new Label("Values\nRed: 4\nOrange: 2\nYellow: 5\nGreen: 1\nBlue: 3");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
 
         SequentialTransition seqTransBubble = new SequentialTransition(recGroup);
 
@@ -169,7 +186,6 @@ public class Bubble_Sort extends Application {
 /*
 VLineTo(int) can help with pathing to various spots, determined by window size and if another element is at the preceding point
 transition1.setOnFinished(e -> System.out.println("Transition is over"));
-
         SortedSet<Pair<Double, Double>> sortedCoords = new TreeSet<>();
         for (int pairIter = 0; pairIter < 5; pairIter++) {   //create rectangles spaced out evenly
             double xParamPair = (arrRecs[pairIter].getBoundsInLocal().getMinX() + arrRecs[pairIter].getBoundsInLocal().getMaxX()) / 2.0;
@@ -177,6 +193,5 @@ transition1.setOnFinished(e -> System.out.println("Transition is over"));
             Pair<Double, Double> pair = new Pair<>(xParamPair,yParamPair);
             sortedCoords.add(pair);
         }
-
      System.out.println(arrRecs[0].getBoundsInLocal().getMinX());
  */

@@ -1,3 +1,5 @@
+package sample.selectionSort;
+
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -6,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
@@ -57,6 +60,18 @@ public class Insertion_Sort extends Application {
             arrRecs[i] = r;
             xLocations[i] = xPos + (r.getWidth() / 2.0);
         }
+
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE); //3 1 4 0 2
+
+        Label desc = new Label("Values\nRed: 4\nOrange: 2\nYellow: 5\nGreen: 1\nBlue: 3");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
 
         SequentialTransition seqTransBubble = new SequentialTransition(recGroup);
 

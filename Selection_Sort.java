@@ -1,11 +1,14 @@
+package sample;
 import javafx.animation.*;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
@@ -14,6 +17,7 @@ import java.util.Hashtable;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Selection_Sort extends Application {
+
 
     //this is the code for BUBBLE SORT.
     public static void main(String[] args) {
@@ -53,6 +57,7 @@ public class Selection_Sort extends Application {
         VBox primaryVbox = new VBox(10);
 
         Rectangle[] arrRecs = new Rectangle[5];
+        Label[] arrLabels = new Label[5];
         Double[] xLocations = new Double[arrRecs.length];
         for (int i = 0; i < arrRecs.length; i++) {   //create rectangles spaced out evenly
             Rectangle r = new Rectangle();
@@ -66,7 +71,31 @@ public class Selection_Sort extends Application {
             recGroup.getChildren().add(r);
             arrRecs[i] = r;
             xLocations[i] = xPos+ (r.getWidth()/2.0);
+
+            Label l = new Label();
+            l.setLayoutX(xPos);
+            l.setLayoutY(450);
+            l.setAlignment(Pos.CENTER);
+            //l.setText("he");
+            recGroup.getChildren().add(l);
         }
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE);
+//        arrLabels[0].setText("4");
+//        arrLabels[1].setText("3");
+//        arrLabels[2].setText("5");
+//        arrLabels[3].setText("2");
+//        arrLabels[4].setText("1");
+
+        Label desc = new Label("Values\nRed: 4\nOrange: 3\nYellow: 5\nGreen: 2\nBlue: 1");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
+
         Label start = new Label("Starting Selection Sort");
         start.setLayoutX(775);
         start.setLayoutY(200);
