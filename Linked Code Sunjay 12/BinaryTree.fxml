@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
@@ -51,6 +52,41 @@
                 <Label fx:id="LabelDelete11" layoutX="333.0" layoutY="120.0" text="Deleting Value 11" visible="false" />
                 <Label fx:id="LabelMove7" layoutX="333.0" layoutY="150.0" text="Moving Value 7" visible="false" />
                 <Circle fx:id="DeleteCircle" fill="#24374a" layoutX="201.0" layoutY="101.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                <Label fx:id="LabelNumShow17" alignment="CENTER" layoutX="150.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" text="17" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow4" alignment="CENTER" layoutX="151.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" text="4" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow21" alignment="CENTER" layoutX="151.0" layoutY="51.0" prefHeight="100.0" prefWidth="100.0" text="21" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow25" alignment="CENTER" layoutX="151.0" layoutY="51.0" prefHeight="100.0" prefWidth="100.0" text="25" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow2" alignment="CENTER" layoutX="151.0" layoutY="51.0" prefHeight="100.0" prefWidth="100.0" text="2" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow11" alignment="CENTER" layoutX="151.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" text="11" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
+                <Label fx:id="LabelNumShow7" alignment="CENTER" layoutX="151.0" layoutY="50.0" prefHeight="100.0" prefWidth="100.0" text="7" visible="false">
+                    <font>
+                        <Font size="60.0" />
+                    </font>
+                </Label>
             </children></Pane>
     </center>
     <top>
@@ -59,6 +95,8 @@
                 <Button fx:id="InsertButtonBT" mnemonicParsing="false" onAction="#InsertBT" text="Insert" />
                 <Button fx:id="DeleteButtonBT" mnemonicParsing="false" onAction="#DeleteBT" text="Delete" />
                 <Button fx:id="SearchButtonBT" mnemonicParsing="false" onAction="#SearchBT" text="Search" />
+            <Region prefHeight="0.0" prefWidth="89.0" />
+            <Button fx:id="backButton" layoutX="115.0" layoutY="10.0" mnemonicParsing="false" onAction="#returnBackToMenu" text="Back" />
             </items>
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -1,14 +1,22 @@
 package sample;
 
 import javafx.animation.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.awt.*;
+import java.io.IOException;
 
 public class ControllerHashtable {
     //DO INSERT, SEARCH, THEN DELETE.  DO NOT DO DELETE BEFORE SEARCH.
@@ -24,6 +32,16 @@ public class ControllerHashtable {
     public javafx.scene.control.Label Label1Mod;
     public Label LabelDelete;
     public Label LabelSearch;
+    public Label LabelVisual1;
+    public Label LabelNum1;
+    public Label LabelNum5;
+    public Label LabelNum8;
+    public Label LabelNum18;
+    public Label LabelNum6;
+    public Label LabelNum3;
+    public Label LabelNum10;
+    public Button HashInsert;
+    public Button backButton;
     double sizeOfTopBar = 0;
     public Rectangle Rec1;
     public Rectangle Rec2;
@@ -52,55 +70,107 @@ public class ControllerHashtable {
         }
 
         SequentialTransition hashtableSeqTranInsert = new SequentialTransition();
-        FadeTransition showEq1 = new FadeTransition(Duration.seconds(1.5), Label1Mod);
+
+        FadeTransition showLab1 = new FadeTransition(Duration.seconds(0.2), LabelNum1);
+        LabelNum1.setVisible(true);
+        showLab1.setFromValue(0.0);
+        showLab1.setToValue(1.0);
+        showLab1.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab1);
+
+        FadeTransition showEq1 = new FadeTransition(Duration.seconds(1), Label1Mod);
         showEq1.setFromValue(0.0);
         showEq1.setToValue(1.0);
         showEq1.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq1);
-        HashTableMoveRect(Rec1, 7.0, hashtableSeqTranInsert);
 
-        FadeTransition showEq5 = new FadeTransition(Duration.seconds(1.5), Label5Mod);
+        HashTableMoveRect(Rec1, LabelNum1,7.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab5 = new FadeTransition(Duration.seconds(0.2), LabelNum5);
+        LabelNum5.setVisible(true);
+        showLab5.setFromValue(0.0);
+        showLab5.setToValue(1.0);
+        showLab5.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab5);
+
+        FadeTransition showEq5 = new FadeTransition(Duration.seconds(1), Label5Mod);
         showEq5.setFromValue(0.0);
         showEq5.setToValue(1.0);
         showEq5.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq5);
-        HashTableMoveRect(Rec2, -1.0, hashtableSeqTranInsert);
 
-        FadeTransition showEq8 = new FadeTransition(Duration.seconds(1.5), Label8Mod);
+        HashTableMoveRect(Rec2, LabelNum5,-1.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab8 = new FadeTransition(Duration.seconds(0.2), LabelNum8);
+        LabelNum8.setVisible(true);
+        showLab8.setFromValue(0.0);
+        showLab8.setToValue(1.0);
+        showLab8.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab8);
+
+        FadeTransition showEq8 = new FadeTransition(Duration.seconds(1), Label8Mod);
         showEq8.setFromValue(0.0);
         showEq8.setToValue(1.0);
         showEq8.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq8);
-        HashTableMoveRect(Rec3, -7.0, hashtableSeqTranInsert);
+        HashTableMoveRect(Rec3, LabelNum8,-7.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab18 = new FadeTransition(Duration.seconds(0.2), LabelNum18);
+        LabelNum18.setVisible(true);
+        showLab18.setFromValue(0.0);
+        showLab18.setToValue(1.0);
+        showLab18.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab18);
 
-        FadeTransition showEq18 = new FadeTransition(Duration.seconds(1.5), Label18Mod);
+        FadeTransition showEq18 = new FadeTransition(Duration.seconds(1), Label18Mod);
         showEq18.setFromValue(0.0);
         showEq18.setToValue(1.0);
         showEq18.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq18);
-        HashTableMoveRect(Rec4, -9.0, hashtableSeqTranInsert);
+        HashTableMoveRect(Rec4, LabelNum18,-9.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab6 = new FadeTransition(Duration.seconds(0.2), LabelNum6);
+        LabelNum6.setVisible(true);
+        showLab6.setFromValue(0.0);
+        showLab6.setToValue(1.0);
+        showLab6.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab6);
 
-        FadeTransition showEq6 = new FadeTransition(Duration.seconds(1.5), Label6Mod);
+        FadeTransition showEq6 = new FadeTransition(Duration.seconds(1), Label6Mod);
         showEq6.setFromValue(0.0);
         showEq6.setToValue(1.0);
         showEq6.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq6);
-        HashTableMoveRect(Rec5, -3.0, hashtableSeqTranInsert);
+        HashTableMoveRect(Rec5, LabelNum6,-3.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab3 = new FadeTransition(Duration.seconds(0.2), LabelNum3);
+        LabelNum3.setVisible(true);
+        showLab3.setFromValue(0.0);
+        showLab3.setToValue(1.0);
+        showLab3.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab3);
 
-        FadeTransition showEq3 = new FadeTransition(Duration.seconds(1.5), Label3Mod);
+        FadeTransition showEq3 = new FadeTransition(Duration.seconds(1), Label3Mod);
         showEq3.setFromValue(0.0);
         showEq3.setToValue(1.0);
         showEq3.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq3);
-        HashTableMoveRect(Rec6, 3.0, hashtableSeqTranInsert);
+        HashTableMoveRect(Rec6, LabelNum3,3.0, hashtableSeqTranInsert);
+//
+        FadeTransition showLab10 = new FadeTransition(Duration.seconds(0.2), LabelNum10);
+        LabelNum10.setVisible(true);
+        showLab10.setFromValue(0.0);
+        showLab10.setToValue(1.0);
+        showLab10.setAutoReverse(true);
+        hashtableSeqTranInsert.getChildren().add(showLab10);
 
-        FadeTransition showEq10 = new FadeTransition(Duration.seconds(1.5), Label10Mod);
+        FadeTransition showEq10 = new FadeTransition(Duration.seconds(1), Label10Mod);
         showEq10.setFromValue(0.0);
         showEq10.setToValue(1.0);
         showEq10.setAutoReverse(true);
         hashtableSeqTranInsert.getChildren().add(showEq10);
-        HashTableMoveRect(Rec7, 9.0, hashtableSeqTranInsert);
-
+        HashTableMoveRect(Rec7, LabelNum10,9.0, hashtableSeqTranInsert);
+//
         hashtableSeqTranInsert.play();
     }
     public void PlayHashtableSequenceDelete () {
@@ -129,7 +199,12 @@ public class ControllerHashtable {
         FadeTransition fadeOutRec = new FadeTransition(Duration.seconds(1), Rec1);
         fadeOutRec.setFromValue(1.0);
         fadeOutRec.setToValue(0.0);
-        hashtableSeqTranDelete.getChildren().add(fadeOutRec);
+        FadeTransition fadeOutNum = new FadeTransition(Duration.seconds(1), LabelNum1);
+        fadeOutNum.setFromValue(1.0);
+        fadeOutNum.setToValue(0.0);
+        ParallelTransition ptD = new ParallelTransition();
+        ptD.getChildren().addAll(fadeOutRec, fadeOutNum);
+        hashtableSeqTranDelete.getChildren().add(ptD);
 
         hashtableSeqTranDelete.play();
         TravelCircle.setVisible(true);
@@ -149,7 +224,7 @@ public class ControllerHashtable {
         hashtableSeqTranSearch.play();
     }
 
-    public void HashTableMoveRect (Rectangle rectangleStart, Double numOfShifts, SequentialTransition hashInsSeqTran) {
+    public void HashTableMoveRect (Rectangle rectangleStart, Label label, Double numOfShifts, SequentialTransition hashInsSeqTran) {
 
         double xStart = (rectangleStart.getBoundsInLocal().getMinX() + rectangleStart.getBoundsInLocal().getMaxX()) / 2.0;
         double yStart = (rectangleStart.getBoundsInLocal().getMinY() + rectangleStart.getBoundsInLocal().getMaxY()) / 2.0;
@@ -165,7 +240,18 @@ public class ControllerHashtable {
         transition.setDuration(Duration.seconds(1.5));
         transition.setPath(polyline);
         transition.setCycleCount(1);
-        hashInsSeqTran.getChildren().add(transition);
+
+        PathTransition transitionOther = new PathTransition();
+        transitionOther.setNode(label);
+        transitionOther.setDuration(Duration.seconds(1.5));
+        transitionOther.setPath(polyline);
+        transitionOther.setCycleCount(1);
+
+        //label.setVisible(true);
+
+        ParallelTransition pt = new ParallelTransition();
+        pt.getChildren().addAll(transition, transitionOther);
+        hashInsSeqTran.getChildren().add(pt);
     }
 
     public void HashTableMoveCirc (Circle circleSearcher, Double numOfShifts, SequentialTransition hashSeqTran) {
@@ -184,5 +270,13 @@ public class ControllerHashtable {
         transition.setPath(polyline);
         transition.setCycleCount(1);
         hashSeqTran.getChildren().add(transition);
+    }
+
+    public void returnToMainMenu(ActionEvent actionEvent) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene scene = new Scene(parent);
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
     }
 }

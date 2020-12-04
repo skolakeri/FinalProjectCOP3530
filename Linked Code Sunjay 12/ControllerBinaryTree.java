@@ -3,18 +3,25 @@ package sample;
 import com.sun.org.apache.bcel.internal.generic.FADD;
 import com.sun.xml.internal.bind.v2.model.core.EnumLeafInfo;
 import javafx.animation.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import jdk.nashorn.internal.ir.Labels;
 
 import java.awt.*;
+import java.io.IOException;
 import java.security.Key;
 import java.sql.Time;
 
@@ -72,57 +79,65 @@ public class ControllerBinaryTree {
     public Circle DeleteCircle;
     public Label LabelMove7;
     public Label LabelDelete11;
+    public Label LabelNumShow17;
+    public Label LabelNumShow4;
+    public Label LabelNumShow21;
+    public Label LabelNumShow25;
+    public Label LabelNumShow2;
+    public Label LabelNumShow11;
+    public Label LabelNumShow7;
+    public Button backButton;
 
     public void InsertBT () {
         SequentialTransition seqTranInsBT = new SequentialTransition();
 //17
-        ShowEqBT(LabelRootBT, seqTranInsBT);
-        MoveCircleBT(Circle1, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
+        ShowEqBTOther(LabelRootBT, LabelNumShow17, seqTranInsBT);
+        MoveCircleBTOther(Circle1, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow17);
         HideEqBT(LabelRootBT, LineFAKE, seqTranInsBT);
 //4
-        ShowEqBT(Comparison1BT, seqTranInsBT);
-        MoveCircleBT(Circle2, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle2, CircleIndex1, CircleIndex2, Line1_2, seqTranInsBT);
+        ShowEqBTOther(Comparison1BT, LabelNumShow4, seqTranInsBT);
+        MoveCircleBTOther(Circle2, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow4);
+        MoveCircleBTOther(Circle2, CircleIndex1, CircleIndex2, Line1_2, seqTranInsBT, LabelNumShow4);
         HideEqBT(Comparison1BT, Line1_2, seqTranInsBT);
 //21
-        ShowEqBT(Comparison2BT, seqTranInsBT);
-        MoveCircleBT(Circle3, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle3, CircleIndex1, CircleIndex3, Line1_3, seqTranInsBT);
+        ShowEqBTOther(Comparison2BT, LabelNumShow21, seqTranInsBT);
+        MoveCircleBTOther(Circle3, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow21);
+        MoveCircleBTOther(Circle3, CircleIndex1, CircleIndex3, Line1_3, seqTranInsBT, LabelNumShow21);
         HideEqBT(Comparison2BT, Line1_3, seqTranInsBT);
 //11
-        ShowEqBT(Comparison3aBT, seqTranInsBT);
-        MoveCircleBT(Circle4, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle4, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT);
+        ShowEqBTOther(Comparison3aBT, LabelNumShow11, seqTranInsBT);
+        MoveCircleBTOther(Circle4, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow11);
+        MoveCircleBTOther(Circle4, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT, LabelNumShow11);
         HideEqBT(Comparison3aBT, LineFAKE, seqTranInsBT);
         ShowEqBT(Comparison3bBT, seqTranInsBT);
-        MoveCircleBT(Circle4, CircleIndex2, CircleIndex5, Line2_5, seqTranInsBT);
+        MoveCircleBTOther(Circle4, CircleIndex2, CircleIndex5, Line2_5, seqTranInsBT, LabelNumShow11);
         HideEqBT(Comparison3bBT, Line2_5, seqTranInsBT);
 //25
-        ShowEqBT(Comparison4aBT, seqTranInsBT);
-        MoveCircleBT(Circle5, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle5, CircleIndex1, CircleIndex3, LineFAKE, seqTranInsBT);
+        ShowEqBTOther(Comparison4aBT, LabelNumShow25, seqTranInsBT);
+        MoveCircleBTOther(Circle5, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow25);
+        MoveCircleBTOther(Circle5, CircleIndex1, CircleIndex3, LineFAKE, seqTranInsBT, LabelNumShow25);
         HideEqBT(Comparison4aBT, LineFAKE, seqTranInsBT);
         ShowEqBT(Comparison4bBT, seqTranInsBT);
-        MoveCircleBT(Circle5, CircleIndex3, CircleIndex6, Line3_6, seqTranInsBT);
+        MoveCircleBTOther(Circle5, CircleIndex3, CircleIndex6, Line3_6, seqTranInsBT, LabelNumShow25);
         HideEqBT(Comparison4bBT, Line3_6, seqTranInsBT);
 //2
-        ShowEqBT(Comparison5aBT, seqTranInsBT);
-        MoveCircleBT(Circle6, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle6, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT);
+        ShowEqBTOther(Comparison5aBT, LabelNumShow2, seqTranInsBT);
+        MoveCircleBTOther(Circle6, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow2);
+        MoveCircleBTOther(Circle6, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT, LabelNumShow2);
         HideEqBT(Comparison5aBT, LineFAKE, seqTranInsBT);
         ShowEqBT(Comparison5bBT, seqTranInsBT);
-        MoveCircleBT(Circle6, CircleIndex2, CircleIndex4, Line2_4, seqTranInsBT);
+        MoveCircleBTOther(Circle6, CircleIndex2, CircleIndex4, Line2_4, seqTranInsBT, LabelNumShow2);
         HideEqBT(Comparison5bBT, Line2_4, seqTranInsBT);
 //7
-        ShowEqBT(Comparison6aBT, seqTranInsBT);
-        MoveCircleBT(Circle7, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT);
-        MoveCircleBT(Circle7, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT);
+        ShowEqBTOther(Comparison6aBT, LabelNumShow7, seqTranInsBT);
+        MoveCircleBTOther(Circle7, StartPlaceholderBT, CircleIndex1, LineFAKE, seqTranInsBT, LabelNumShow7);
+        MoveCircleBTOther(Circle7, CircleIndex1, CircleIndex2, LineFAKE, seqTranInsBT, LabelNumShow7);
         HideEqBT(Comparison6aBT, LineFAKE, seqTranInsBT);
         ShowEqBT(Comparison6bBT, seqTranInsBT);
-        MoveCircleBT(Circle7, CircleIndex2, CircleIndex5, LineFAKE, seqTranInsBT);
+        MoveCircleBTOther(Circle7, CircleIndex2, CircleIndex5, LineFAKE, seqTranInsBT, LabelNumShow7);
         HideEqBT(Comparison6bBT, LineFAKE, seqTranInsBT);
         ShowEqBT(Comparison6cBT, seqTranInsBT);
-        MoveCircleBT(Circle7, CircleIndex5, CircleIndex7, Line5_7, seqTranInsBT);
+        MoveCircleBTOther(Circle7, CircleIndex5, CircleIndex7, Line5_7, seqTranInsBT, LabelNumShow7);
         HideEqBT(Comparison6cBT, Line5_7, seqTranInsBT);
 
         seqTranInsBT.play();
@@ -148,6 +163,12 @@ public class ControllerBinaryTree {
         fadeOutDelCir.setNode(DeleteCircle);
         seqTranDelBT.getChildren().add(fadeOutDelCir);
 
+        FadeTransition fadeOutLabel = new FadeTransition(Duration.seconds(0.5));
+        fadeOutLabel.setFromValue(1.0);
+        fadeOutLabel.setToValue(0.0);
+        fadeOutLabel.setNode(LabelNumShow11);
+        seqTranDelBT.getChildren().add(fadeOutLabel);
+
         FadeTransition fadeoutCir = new FadeTransition(Duration.seconds(0.5));
         fadeoutCir.setFromValue(1.0);
         fadeoutCir.setToValue(0.0);
@@ -156,7 +177,7 @@ public class ControllerBinaryTree {
         HideEqBT(LabelDelete11, LineFAKE, seqTranDelBT);
 
         ShowEqBT(LabelMove7, seqTranDelBT);
-        MoveCircleBT(Circle7, CircleIndex7, CircleIndex5, LineFAKE, seqTranDelBT);
+        MoveCircleBTOther(Circle7, CircleIndex7, CircleIndex5, LineFAKE, seqTranDelBT, LabelNumShow7);
         HideEqBT(LabelMove7, LineFAKE, seqTranDelBT);
 
         FadeTransition fadeOutLine = new FadeTransition(Duration.seconds(0.5));
@@ -224,10 +245,50 @@ public class ControllerBinaryTree {
                 loc1, loc2);
         PathTransition transition = new PathTransition();
         transition.setNode(circleToMove);
-        transition.setDuration(Duration.seconds(1.5));
+        transition.setDuration(Duration.seconds(1));
         transition.setPath(path);
         transition.setCycleCount(1);
+
         seqTran.getChildren().add(transition);
+
+        line.setVisible(true);
+        LineFAKE.setVisible(false);
+    }
+
+    public void MoveCircleBTOther (Circle circleToMove, Circle from, Circle destination, Line line, SequentialTransition seqTran, Label labelNum) {
+        Polyline path = new Polyline();
+        //destination points
+        double start1 = from.getLayoutX()-200;
+        //System.out.println(from.getLayoutX() + " ," + from.getLayoutY());
+        double start2 = from.getLayoutY()-100;
+        double loc1 = destination.getLayoutX()-200.0;
+        double loc2 = destination.getLayoutY()-100.0;
+        path.getPoints().addAll(start1, start2,
+                loc1, loc2);
+        PathTransition transition = new PathTransition();
+        transition.setNode(circleToMove);
+        transition.setDuration(Duration.seconds(1));
+        transition.setPath(path);
+        transition.setCycleCount(1);
+
+        Polyline pathOther = new Polyline();
+        pathOther.getPoints().addAll(start1+50, start2+50,
+                loc1+50, loc2+50);
+
+        PathTransition transitionOther = new PathTransition();
+        transitionOther.setNode(labelNum);
+        transitionOther.setDuration(Duration.seconds(1));
+        transitionOther.setPath(pathOther);
+        transitionOther.setCycleCount(1);
+
+        //label.setVisible(true);
+
+        ParallelTransition pt = new ParallelTransition();
+        pt.getChildren().addAll(transition, transitionOther);
+        seqTran.getChildren().add(pt);
+
+        //seqTran.getChildren().add(transition);
+
         line.setVisible(true);
         LineFAKE.setVisible(false);
     }
@@ -238,6 +299,26 @@ public class ControllerBinaryTree {
         showEq.setFromValue(0.0);
         showEq.setToValue(1.0);
         showEq.setAutoReverse(true);
+
+        seqTranBT2.getChildren().add(showEq);
+    }
+
+    public void ShowEqBTOther (Label label, Label labelNum, SequentialTransition seqTranBT2) {
+        FadeTransition showEq = new FadeTransition(Duration.seconds(0.5), label);
+        label.setVisible(true);
+        showEq.setFromValue(0.0);
+        showEq.setToValue(1.0);
+        showEq.setAutoReverse(true);
+
+        FadeTransition showLab1 = new FadeTransition(Duration.seconds(0.5), labelNum);
+        labelNum.setVisible(true);
+        showLab1.setFromValue(0.0);
+        showLab1.setToValue(1.0);
+        showLab1.setAutoReverse(true);
+
+        ParallelTransition pt = new ParallelTransition();
+        pt.getChildren().addAll(showEq, showLab1);
+        seqTranBT2.getChildren().add(showLab1);
         seqTranBT2.getChildren().add(showEq);
     }
 
@@ -256,4 +337,11 @@ public class ControllerBinaryTree {
         seqTranBT3.getChildren().add(hideEq);
     }
 
+    public void returnBackToMenu(ActionEvent actionEvent) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene scene = new Scene(parent);
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+    }
 }

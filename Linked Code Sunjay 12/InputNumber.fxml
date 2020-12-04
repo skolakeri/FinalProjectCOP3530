@@ -11,7 +11,6 @@
    <children>
       <TextField fx:id="userNumberInput" layoutX="226.0" layoutY="188.0" onAction="#computeSortAlgo" promptText="Number" />
       <Label layoutX="193.0" layoutY="160.0" text="Enter the number of values to be sorted:" />
-      <Button layoutX="414.0" layoutY="350.0" mnemonicParsing="false" text="Back" />
       <HBox layoutX="2.0" layoutY="213.0" prefHeight="100.0" prefWidth="600.0">
          <children>
             <Region prefHeight="100.0" prefWidth="173.0" />
@@ -19,6 +18,5 @@
          </children>
       </HBox>
       <HBox layoutX="193.0" layoutY="286.0" prefHeight="100.0" prefWidth="200.0" />
-      <Button fx:id="nextButton" layoutX="504.0" layoutY="350.0" mnemonicParsing="false" onAction="#nextButtonClicked" text="Next" />
    </children>
 </AnchorPane>

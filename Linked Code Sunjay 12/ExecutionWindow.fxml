@@ -1,64 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExecutionWindowController">
-   <left>
-      <VBox BorderPane.alignment="CENTER">
-         <children>
-            <Label>
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Label>
-            <Text fx:id="numberSorted" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="175.0" translateY="50.0">
-               <font>
-                  <Font size="16.0" />
-               </font></Text>
-            <Label text="Elements Sorted:" VBox.vgrow="ALWAYS">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label text="Time Complexity:">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label text="Time Elapsed for Execution:" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </left>
-   <bottom>
-      <HBox BorderPane.alignment="CENTER">
-         <children>
-            <Text fx:id="TimeExectionTextBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" translateX="145.0" />
-         </children>
-      </HBox>
-   </bottom>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ExecutionWindowController">
+    <left>
+        <VBox prefHeight="109.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+            <SplitPane dividerPositions="0.5183946488294314" prefHeight="109.0" prefWidth="593.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="314.0">
+                     <children>
+                            <Label alignment="TOP_LEFT" layoutX="32.0" layoutY="27.0" prefHeight="32.0" prefWidth="267.0" text="Time Elapsed for Execution:" textFill="#f5b54d" wrapText="true">
+                                <font>
+                                    <Font name="Marker Felt Thin" size="22.0" />
+                                </font>
+                            </Label>
+                            <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="54.0" prefHeight="30.0" prefWidth="254.0" text="Elements Sorted:" textFill="#f57b2a">
+                                <font>
+                                    <Font name="Marker Felt Thin" size="22.0" />
+                                </font>
+                            </Label>
+                            <Label alignment="TOP_RIGHT" layoutX="44.0" layoutY="-1.0" prefHeight="31.0" prefWidth="256.0" text="Time Complexity:" textFill="#da9d53">
+                                <font>
+                                    <Font name="Marker Felt Thin" size="22.0" />
+                                </font>
+                            </Label>
+                        <Label alignment="CENTER" layoutX="-4.0" layoutY="59.0" prefHeight="46.0" prefWidth="80.0" text="Sorted">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="259.0">
+                     <children>
+                            <Text fill="#000dc3" layoutX="7.0" layoutY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O(n)^2" translateY="23.0" wrappingWidth="74.07999992370605">
+                                <font>
+                                    <Font size="21.0" />
+                                </font>
+                        </Text>
+                            <Text fx:id="numberSorted" fill="#679fe8" layoutX="6.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+                           <font>
+                              <Font name="Marker Felt Thin" size="22.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="TimeExecutionTextBox" layoutX="6.0" layoutY="30.0" prefHeight="32.0" prefWidth="238.0" text="Text" textFill="#2276d7">
+                           <font>
+                              <Font name="Marker Felt Thin" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="192.0" layoutY="71.0" prefHeight="28.0" prefWidth="86.0" text="Unsorted">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            </children>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox prefHeight="145.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="unsortedArrayElements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="310.0" />
+              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                  <children>
+                      <TextArea fx:id="sortedArrayElements" prefHeight="200.0" prefWidth="290.0" />
+                  </children>
+              </HBox>
+            </children>
+        </HBox>
+    </bottom>
    <top>
-      <Text fx:id="nameOfAlgorithmn" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sort" translateX="200.0" wrappingWidth="170.13671875" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Text>
+        <Text fx:id="nameOfAlgorithmn" fill="#0041e4" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sort" textAlignment="CENTER" wrappingWidth="281.13671875" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Marker Felt Thin" size="41.0" />
+            </font>
+        </Text>
    </top>
-   <right>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
-         <children>
-            <TextArea fx:id="unsortedArrayElements" prefHeight="177.0" prefWidth="175.0" />
-            <TextArea fx:id="sortedArrayElements" prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </HBox>
-   </right>
 </BorderPane>

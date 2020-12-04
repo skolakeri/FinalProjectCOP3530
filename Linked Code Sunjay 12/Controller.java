@@ -15,8 +15,6 @@ import java.io.IOException;
 
 public class Controller extends Main{
 
-
-
     enum SORT{
         SELECTION,
         BUBBLE,

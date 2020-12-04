@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -46,10 +47,11 @@ public class ExecutionWindowController {
     public Text nameOfAlgorithmn;
     public TextArea unsortedArrayElements;
     public TextArea sortedArrayElements;
-    public Text TimeExectionTextBox;
-    public BorderPane SubSceneBorderPane;
-    public javafx.scene.SubScene SubScene;
-    public Button backButton;
+    //public Text TimeExectionTextBox;
+    public Label TimeExecutionTextBox;
+//    public BorderPane SubSceneBorderPane;
+//    public javafx.scene.SubScene SubScene;
+//    public Button backButton;
 
     /*
         This method will be invoked when the back button is clicked. It loads the inputNumber FXML file
@@ -580,7 +582,8 @@ public class ExecutionWindowController {
             arr[i] = temp;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
         //System.out.println(stopTime - startTime);
     }
     public void bubbleSortDouble(double arr[], int size) {
@@ -600,7 +603,8 @@ public class ExecutionWindowController {
             }
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
     public void insertionSortDouble(double arr[], int size) {
         long startTime = System.nanoTime();
@@ -614,7 +618,8 @@ public class ExecutionWindowController {
             arr[i+1] = key;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
 
     public void bubbleSortInt(int arr[], int size) {
@@ -634,7 +639,8 @@ public class ExecutionWindowController {
             }
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
     public void insertionSortInt(int arr[], int size) {
         long startTime = System.nanoTime();
@@ -648,7 +654,8 @@ public class ExecutionWindowController {
             arr[i+1] = key;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
     public void selectionSortInt(int arr[], int size) {
         long startTime = System.nanoTime();
@@ -663,7 +670,8 @@ public class ExecutionWindowController {
             arr[i] = temp;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
 
     public void bubbleSortFloat(float arr[], int size) {
@@ -683,7 +691,8 @@ public class ExecutionWindowController {
             }
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
     public void insertionSortFloat(float arr[], int size) {
         long startTime = System.nanoTime();
@@ -697,7 +706,8 @@ public class ExecutionWindowController {
             arr[i+1] = key;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
     public void selectionSortFloat(float arr[], int size) {
         long startTime = System.nanoTime();
@@ -712,7 +722,9 @@ public class ExecutionWindowController {
             arr[i] = temp;
         }
         long stopTime = System.nanoTime();
-        TimeExectionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        //TimeExecutionTextBox.setText();
+        //TimeExecutionTextBox.setAccessibleText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
+        TimeExecutionTextBox.setText(String.valueOf((stopTime - startTime) / 1000000.0) + " milliseconds");
     }
 
 
@@ -876,6 +888,7 @@ public class ExecutionWindowController {
             Stage window = (Stage) menuButton.getScene().getWindow();
             window.setScene(scene);
             window.show();
+
             //BorderPane pane = FXMLLoader.load(getClass().getResource("Hashtable.fxml"));
         }
         if(animationType == Controller.ANIMATION.TABLE)
@@ -938,6 +951,18 @@ public class ExecutionWindowController {
             arrRecs[i] = r;
             xLocations[i] = xPos + (r.getWidth() / 2.0);
         }
+
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE); //3 1 4 0 2
+
+        Label desc = new Label("Values\nRed: 4\nOrange: 2\nYellow: 5\nGreen: 1\nBlue: 3");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
 
         SequentialTransition seqTransBubble = new SequentialTransition(recGroup);
 
@@ -1096,6 +1121,16 @@ public class ExecutionWindowController {
             arrRecs[i] = r;
             xLocations[i] = xPos + (r.getWidth() / 2.0);
         }
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE);
+        Label desc = new Label("Values\nRed: 4\nOrange: 2\nYellow: 5\nGreen: 1\nBlue: 3");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
 
         SequentialTransition seqTransBubble = new SequentialTransition(recGroup);
 
@@ -1253,6 +1288,22 @@ public class ExecutionWindowController {
             arrRecs[i] = r;
             xLocations[i] = xPos+ (r.getWidth()/2.0);
         }
+        arrRecs[0].setFill(Color.RED);
+        arrRecs[1].setFill(Color.ORANGE);
+        arrRecs[2].setFill(Color.YELLOW);
+        arrRecs[3].setFill(Color.GREEN);
+        arrRecs[4].setFill(Color.BLUE);
+//        arrLabels[0].setText("4");
+//        arrLabels[1].setText("3");
+//        arrLabels[2].setText("5");
+//        arrLabels[3].setText("2");
+//        arrLabels[4].setText("1");
+
+        Label desc = new Label("Values\nRed: 4\nOrange: 3\nYellow: 5\nGreen: 2\nBlue: 1");
+        desc.setLayoutX(100);
+        desc.setLayoutY(80);
+        desc.setFont(new Font(24.0));
+        root.getChildren().add(desc);
         Label start = new Label("Starting Selection Sort");
         start.setLayoutX(775);
         start.setLayoutY(200);

@@ -69,10 +69,6 @@ public class InputNumber {
         //controller.setTypes(actionEvent, typeOfSort, typeOfPrimitive);
         //computeSortAlgo(actionEvent, typeOfSort, typeOfPrimitive);
     }
-
-    public void nextButtonClicked(ActionEvent actionEvent) throws IOException {
-        //computeSortAlgo(actionEvent, typeOfSort, typeOfPrimitive);
-    }
      
 
      /*

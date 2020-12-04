@@ -15,9 +15,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Label fx:id="title" alignment="CENTER" prefHeight="81.0" prefWidth="600.0" text="Data Structures And Algorithms Visualizer">
+        <Label fx:id="title" alignment="CENTER" prefHeight="81.0" prefWidth="665.0" text="Data Structures And Algorithms Visualizer">
             <font>
                 <Font name="Marker Felt Thin" size="36.0" />
             </font>
@@ -34,7 +34,7 @@
             <items>
                 <AnchorPane fx:id="topHalf" minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="598.0">
                     <children>
-                        <MenuButton fx:id="dataType" alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="598.0" text="Data Type" textFill="#1630dd">
+                        <MenuButton fx:id="dataType" alignment="CENTER" layoutX="35.0" layoutY="1.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="598.0" text="Data Type" textFill="#1630dd">
                             <items>
                                 <MenuItem fx:id="doubleData" mnemonicParsing="false" onAction="#doubleTypeClicked" text="Double" />
                                 <MenuItem fx:id="floatData" mnemonicParsing="false" onAction="#floatTypeClicked" text="Float" />
@@ -48,7 +48,7 @@
                 </AnchorPane>
                 <AnchorPane fx:id="bottomHalf" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                     <children>
-                        <SplitPane fx:id="verticalSplit" dividerPositions="0.5" prefHeight="160.0" prefWidth="598.0">
+                        <SplitPane fx:id="verticalSplit" dividerPositions="0.5" prefHeight="160.0" prefWidth="598.0" translateX="35.0">
                             <items>
                                 <AnchorPane fx:id="leftHalf" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                     <children>
@@ -57,8 +57,6 @@
                                                 <MenuItem fx:id="selComp" mnemonicParsing="false" onAction="#selectionSortClicked" text="Selection Sort" />
                                                 <MenuItem fx:id="insComp" mnemonicParsing="false" onAction="#insertionSortClicked" text="Insertion Sort" />
                                                 <MenuItem fx:id="bubComp" mnemonicParsing="false" onAction="#bubbleSortClicked" text="Bubble Sort" />
-                                                <MenuItem fx:id="tabComp" mnemonicParsing="false" text="Table" />
-                                                <MenuItem fx:id="treeComp" mnemonicParsing="false" text="Tree" />
                                             </items>
                                             <font>
                                                 <Font name="Marker Felt Thin" size="30.0" />
@@ -88,7 +86,7 @@
                 </AnchorPane>
             </items>
         </SplitPane>
-        <Label fx:id="instructions" alignment="CENTER" prefHeight="120.0" prefWidth="601.0" text="Select Data Type --&gt; Select Sorting Algorithm or Data Structure">
+        <Label fx:id="instructions" alignment="CENTER" prefHeight="120.0" prefWidth="617.0" text="Select Data Type --&gt; Select Sorting Algorithm or Data Structure" translateX="24.0">
             <font>
                 <Font name="Marker Felt Thin" size="22.0" />
             </font>
